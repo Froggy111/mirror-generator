@@ -36,11 +36,8 @@ namespace mirror {
     }
 
     for (int i = 0; i < plotted_mirror.size(); i++) {
-      x = plotted_mirror[i][0] * scale;
-      x += x_offset;
-      y = plotted_mirror[i][1] - y_offset;
-      y = -y;
-      y = y * scale;
+      x = plotted_mirror[i][0] * scale + x_offset;
+      y = (y_offset - plotted_mirror[i][1]) * scale;
       offset_points[i] = {x, y};
       // cout << fmt::format("Scaled point {}: x = {}, y = {}", i, offset_points[i].x, offset_points[i].y) << endl;
     }
